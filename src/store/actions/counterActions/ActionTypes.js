@@ -1,0 +1,3 @@
+export const INCREMENT = 'INCREMENT'
+export const INCREMENTING = 'INCREMENTING'
+export const INCREMENTED = 'INCREMENTED'

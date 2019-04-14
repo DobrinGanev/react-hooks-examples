@@ -9,6 +9,18 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DobrinGanev/react-hooks-examples.git"
+  },
+  "keywords": [
+    "react hooks",
+    "react hooks async",
+    "redux",
+    "middleware"
+  ],
+  "author": "Dobrin Ganev (https://github.com/DobrinGanev)",
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

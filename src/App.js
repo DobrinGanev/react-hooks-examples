@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'
 import CounterRedux from './components/CounterRedux'
 import Counter from './components/Counter'
+import PubSub from './components/PubSub'
 import counterReducer, { initialState } from './store/reducers/counterReducer'
 import thunk from './store/thunk'
 const store = configureStore()
@@ -18,6 +19,7 @@ const App = () => {
       </Provider>
       <CounterContext.Provider value={thunk(counterDispatch)(counter)}>
         <Counter counter={counter} />
+        <PubSub />
       </CounterContext.Provider>
     </>
   )

@@ -93,7 +93,7 @@ useEffect(() => {
 
 ```
 
-## PubSub example `useEffect
+## PubSub example useEffect
 
 To run the example start the app from the server directory with `npm run dev`
 

@@ -93,7 +93,7 @@ useEffect(() => {
 
 ```
 
-## PubSub example useEffect
+## PubSub example with useEffect
 
 To run the example start the app from the server directory with `npm run dev`
 
@@ -113,4 +113,4 @@ useEffect(() => {
 }); // use empty array to subscribe once on component did mount
 ```
 
-The above `useEffects` will subscribe and unsubcribe on every re-render
+The above `useEffect` will subscribe and unsubcribe on every re-render

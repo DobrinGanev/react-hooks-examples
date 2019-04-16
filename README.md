@@ -114,3 +114,42 @@ useEffect(() => {
 ```
 
 The above `useEffect` will subscribe and unsubcribe on every re-render
+
+
+## Socket as Custom hook
+```js
+import { useEffect, useState } from 'react'
+
+export const useSocket = (event, socket) => {
+  const [data, setData] = useState({})
+
+  useEffect(() => {
+    if (event) {
+      socket.on(event, data => {
+        setData({ data })
+      })
+
+      return () => socket.removeListener(event)
+    }
+  })
+
+  return data
+}
+
+```
+
+then in your component
+
+```js
+const PubSub = () => {
+  const socketData = useSocket('message', socket)
+
+  return (
+    <>
+      <h2>Pub Sub Example</h2>
+      <p>Message {socketData.data}</p>
+    </>
+  )
+}
+```
+

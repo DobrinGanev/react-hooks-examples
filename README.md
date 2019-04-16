@@ -152,4 +152,26 @@ const PubSub = () => {
   )
 }
 ```
+## Fetching async and using abort
+```js
+const controller = new AbortController()
+  const fetchData = async () => {
+    setIsLoading(true)
+    const response = await fetch('http://localhost:5000/getData', {
+      signal: controller.signal
+    })
+    const json = await response.json()
+    setResponse(json)
+    setIsLoading(false)
+  }
+  useEffect(
+    () => {
+      fetchData()
+      return () => controller.abort()
+    },
+    [fetchAgain]
+  )
+  ...
+```
+
 

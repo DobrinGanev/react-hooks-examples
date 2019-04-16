@@ -169,9 +169,14 @@ const controller = new AbortController()
       fetchData()
       return () => controller.abort()
     },
-    [fetchAgain]
+    [fetchAgain] // dependency prop, if this changes the useEffect will run again
   )
-  ...
+ return (
+    <>
+      isLoading ? <h3>Loading</h3> : <p>{response.data}</p>}
+      <button onClick={() => setFetchAgain(Math.random())}>Fetch Again</button>
+    </>
+  )
 ```
 
 

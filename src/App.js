@@ -6,6 +6,7 @@ import Counter from './components/Counter'
 import PubSub from './components/PubSub'
 import counterReducer, { initialState } from './store/reducers/counterReducer'
 import thunk from './store/thunk'
+import Fetch from './components/Fetch'
 const store = configureStore()
 
 export const CounterContext = React.createContext(null)
@@ -20,6 +21,7 @@ const App = () => {
       <CounterContext.Provider value={thunk(counterDispatch)(counter)}>
         <Counter counter={counter} />
         <PubSub />
+        <Fetch />
       </CounterContext.Provider>
     </>
   )

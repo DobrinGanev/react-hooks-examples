@@ -1,12 +1,12 @@
 import React from 'react'
 import Sibling from '../Sibling'
-import ChildConsumer from '../ConsumerChild'
+import ConsumerChild from '../ConsumerChild'
 
 class Parent extends React.PureComponent {
   render () {
     return (
       <>
-        <ChildConsumer />
+        <ConsumerChild />
         <Sibling />
       </>
     )

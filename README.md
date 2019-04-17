@@ -178,5 +178,32 @@ const controller = new AbortController()
     </>
   )
 ```
+## Re-render only Consumers
+```js
+ <RerenderContext.Provider value={inc}>
+        <Parent />
+  </RerenderContext.Provider>
+
+```
+The parent should be PureComponent
+```js
+class Parent extends React.PureComponent {
+  render () {
+    return (
+      <>
+        <ConsumerChild /> // consumer will re-render
+        <Sibling /> // sibling should not re-render 
+      </>
+    )
+  }
+}
+```
+```js
+const ConsumerChild = props => {
+  const count = useContext(RerenderContext)
+  return <div>Consumer that should update every time. count {count}</div>
+}
+```
+
 
 
